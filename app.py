@@ -1,18 +1,18 @@
 from lib.cards import Deck
-
+from lib.player import SkillRatings
+from lib.player import Skills
+from lib.player import Player
 
 def main():
-    playercards = Deck()
-    print('Player Deck:')
-    print(playercards.deck)
-    playercards.shuffle()
-    print('Shuffled:')
-    print(playercards.deck)
-    hand = playercards.draw(3)
-    print('Hand:')
-    print(hand)
-    print('New Deck')
-    print(playercards.deck)
+    skills = Skills()
+    skills.combative = SkillRatings.superior
+    skills.social = SkillRatings.average
+    skills.kinetic = SkillRatings.above_average
+    skills.technical = SkillRatings.average
+    print(skills)
+
+    chris = Player(skills)
+    print(chris.skills)
 
 if __name__ == '__main__':
     main()

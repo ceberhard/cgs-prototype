@@ -22,8 +22,10 @@ class Player:
         self.__hand = hand
 
     def play(self, cardindex):
-        if (len(self.__hand) > cardindex):
-            print('Hand is empty, need to draw more')
+        if (len(self.__hand) == 0):
+            print('hand is empty, need to draw more')
+        elif (cardindex >= len(self.__hand)):
+            print('invalid card index')
         else:
             return self.__hand.pop(cardindex)
 

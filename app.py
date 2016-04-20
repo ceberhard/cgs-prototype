@@ -9,10 +9,22 @@ def main():
     skills.social = SkillRatings.average
     skills.kinetic = SkillRatings.above_average
     skills.technical = SkillRatings.average
-    print(skills)
-
     chris = Player(skills)
     print(chris.skills)
+
+    playerdeck = Deck()
+    playerdeck.shuffle()
+
+    chris.hand = playerdeck.draw(3)
+    print(chris.hand)
+
+    playcard = chris.play(2)
+    print(playcard)
+
+    print(chris.hand)
+
+
+
 
 if __name__ == '__main__':
     main()

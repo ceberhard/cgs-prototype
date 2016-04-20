@@ -1,3 +1,4 @@
+from . import cards
 
 class Player:
     def __init__(self, skills):
@@ -13,6 +14,18 @@ class Player:
         else:
             raise TypeError('skills property should be of lib.player.Skills type')
 
+    @property
+    def hand(self):
+        return self.__hand
+    @hand.setter
+    def hand(self, hand):
+        self.__hand = hand
+
+    def play(self, cardindex):
+        if (len(self.__hand) > cardindex):
+            print('Hand is empty, need to draw more')
+        else:
+            return self.__hand.pop(cardindex)
 
 class SkillRatings:
     superior = 9
@@ -132,9 +145,4 @@ class Skills:
                 raise AttributeError('Skill Values Must Correspond to SkillRatings enum')
         else:
             raise TypeError('Skill Values Should be int')
-
-
-
-
-
 

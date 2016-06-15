@@ -1,7 +1,7 @@
 from lib.cards import Deck
-from lib.player import SkillRatings
-from lib.player import Skills
-from lib.player import Player
+from lib.player import Player, Skills, SkillRatings
+#from lib.player import Skills
+#from lib.player import Player
 
 def main():
     skills = Skills()
